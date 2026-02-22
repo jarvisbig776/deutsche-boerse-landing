@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +11,7 @@
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #001233;
+            background: #000814;
             color: #FFFFFF;
             line-height: 1.6;
         }
@@ -21,99 +22,186 @@
             padding: 0 24px;
         }
 
-        header {
-            padding: 32px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .logo {
+        /* Hero Section with Faded Logo */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
+            padding: 60px 24px;
+            background: linear-gradient(180deg, #000814 0%, #001d3d 50%, #003566 100%);
+            overflow: hidden;
         }
 
-        .logo img {
-            height: 80px;
-            width: auto;
-            max-width: 100%;
+        /* Faded Logo Background */
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 900px;
+            z-index: 0;
+            opacity: 0.08;
+            pointer-events: none;
         }
 
-        .hero {
-            padding: 60px 0 50px;
+        .logo-bg img {
+            width: 100%;
+            height: auto;
+            filter: grayscale(100%) brightness(2);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
             text-align: center;
-            background: linear-gradient(180deg, #001233 0%, #001845 100%);
+            max-width: 800px;
         }
 
-        .hero h1 {
-            font-size: 48px;
+        .hero-small-logo {
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .hero-small-logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .hero-content h1 {
+            font-size: 52px;
             font-weight: 800;
             line-height: 1.1;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
         }
 
-        .hero h1 span {
+        .hero-content h1 span {
             color: #00B4D8;
+            display: block;
+            margin-top: 8px;
         }
 
         .hero-subtitle {
-            font-size: 22px;
+            font-size: 20px;
             color: #90E0EF;
-            max-width: 700px;
-            margin: 0 auto 16px;
+            margin-bottom: 16px;
+            font-weight: 400;
         }
 
         .hero-hint {
             font-size: 15px;
             color: #CAF0F8;
             font-style: italic;
+            opacity: 0.8;
         }
 
-        .secrets-section {
-            padding: 50px 0;
-            background: linear-gradient(180deg, #001845 0%, #002855 100%);
+        /* Insights Section */
+        .insights-section {
+            padding: 100px 0 80px;
+            background: linear-gradient(180deg, #003566 0%, #001d3d 100%);
         }
 
-        .secrets-grid {
+        .section-title {
+            text-align: center;
+            font-size: 14px;
+            color: #00B4D8;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+            font-weight: 600;
+        }
+
+        .insights-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            max-width: 900px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
-        .secret-card {
-            background: linear-gradient(135deg, rgba(0, 180, 216, 0.1) 0%, rgba(0, 119, 182, 0.1) 100%);
-            border: 1px solid rgba(0, 180, 216, 0.3);
-            border-radius: 16px;
-            padding: 32px;
+        @media (max-width: 900px) {
+            .insights-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .insight-card {
+            background: linear-gradient(145deg, rgba(0, 180, 216, 0.08) 0%, rgba(0, 119, 182, 0.05) 100%);
+            border: 1px solid rgba(0, 180, 216, 0.2);
+            border-radius: 20px;
+            padding: 48px 36px;
             text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .secret-card h3 {
-            font-size: 18px;
+        .insight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 180, 216, 0.6), transparent);
+        }
+
+        .insight-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 180, 216, 0.4);
+            box-shadow: 0 20px 60px rgba(0, 180, 216, 0.15);
+        }
+
+        .insight-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: rgba(0, 180, 216, 0.3);
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+
+        .insight-card h3 {
+            font-size: 20px;
             font-weight: 600;
-            margin-bottom: 12px;
-            color: #00B4D8;
+            margin-bottom: 16px;
+            color: #FFFFFF;
         }
 
-        .secret-card p {
-            color: #CAF0F8;
+        .insight-card p {
+            color: #90E0EF;
             font-size: 15px;
+            line-height: 1.7;
         }
 
+        .insight-quote {
+            font-style: italic;
+            color: #CAF0F8;
+            border-left: 2px solid rgba(0, 180, 216, 0.4);
+            padding-left: 16px;
+            margin-top: 16px;
+            font-size: 14px;
+        }
+
+        /* Form Section */
         .form-section {
-            padding: 60px 0 80px;
-            background: #002855;
+            padding: 100px 0;
+            background: linear-gradient(180deg, #001d3d 0%, #000814 100%);
         }
 
         .form-container {
             max-width: 480px;
             margin: 0 auto;
-            background: linear-gradient(135deg, #001845 0%, #002855 100%);
-            border: 1px solid rgba(0, 180, 216, 0.3);
+            background: linear-gradient(145deg, rgba(0, 29, 61, 0.8) 0%, rgba(0, 53, 102, 0.6) 100%);
+            border: 1px solid rgba(0, 180, 216, 0.25);
             border-radius: 24px;
             padding: 48px;
             position: relative;
+            backdrop-filter: blur(10px);
         }
 
         .form-container::before {
@@ -122,36 +210,37 @@
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 60%;
+            width: 40%;
             height: 2px;
             background: linear-gradient(90deg, transparent, #00B4D8, transparent);
         }
 
         .form-header {
             text-align: center;
-            margin-bottom: 28px;
+            margin-bottom: 32px;
         }
 
         .form-header h2 {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 700;
             margin-bottom: 10px;
         }
 
         .form-header p {
             color: #90E0EF;
-            font-size: 14px;
+            font-size: 15px;
         }
 
         .urgency {
-            background: rgba(0, 180, 216, 0.15);
-            border: 1px solid rgba(0, 180, 216, 0.4);
-            border-radius: 8px;
-            padding: 12px;
-            margin-bottom: 24px;
+            background: rgba(0, 180, 216, 0.1);
+            border: 1px solid rgba(0, 180, 216, 0.3);
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 28px;
             text-align: center;
             font-size: 13px;
             color: #00B4D8;
+            font-weight: 500;
         }
 
         .form-group {
@@ -173,19 +262,20 @@
         .form-group select {
             width: 100%;
             padding: 14px 16px;
-            background: rgba(0, 24, 69, 0.5);
+            background: rgba(0, 8, 20, 0.6);
             border: 1px solid rgba(0, 180, 216, 0.2);
             border-radius: 12px;
             color: #FFFFFF;
             font-size: 15px;
             font-family: inherit;
+            transition: all 0.3s;
         }
 
         .form-group input:focus,
         .form-group select:focus {
             outline: none;
             border-color: #00B4D8;
-            box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.1);
+            box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.15);
         }
 
         .submit-btn {
@@ -205,31 +295,31 @@
 
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 180, 216, 0.3);
+            box-shadow: 0 12px 30px rgba(0, 180, 216, 0.4);
         }
 
         .trust-badges {
             display: flex;
             justify-content: center;
-            gap: 24px;
-            margin-top: 24px;
-            padding-top: 24px;
-            border-top: 1px solid rgba(0, 180, 216, 0.2);
+            gap: 32px;
+            margin-top: 28px;
+            padding-top: 28px;
+            border-top: 1px solid rgba(0, 180, 216, 0.15);
         }
 
         .trust-badge {
             display: flex;
             align-items: center;
-            gap: 6px;
-            font-size: 12px;
+            gap: 8px;
+            font-size: 13px;
             color: #90E0EF;
         }
 
         footer {
-            padding: 30px 0;
+            padding: 40px 0;
             text-align: center;
-            border-top: 1px solid rgba(0, 180, 216, 0.2);
-            background: #001233;
+            border-top: 1px solid rgba(0, 180, 216, 0.1);
+            background: #000814;
         }
 
         footer p {
@@ -250,55 +340,72 @@
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 32px; }
+            .hero-content h1 { font-size: 36px; }
+            .hero-small-logo img { height: 45px; }
+            .logo-bg { width: 120%; opacity: 0.06; }
             .form-container { padding: 32px 24px; }
-            .logo img { height: 60px; }
-            .trust-badges { flex-direction: column; gap: 12px; }
+            .trust-badges { flex-direction: column; gap: 16px; align-items: center; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
+    <!-- Hero Section with Faded Logo -->
+    <section class="hero-section">
+        <!-- Large Faded Logo in Background -->
+        <div class="logo-bg">
+            <img src="https://www.cryptotimes.io/wp-content/uploads/2024/02/Deutsche-Borse-Group-website.jpg" alt="">
+        </div>
+
+        <div class="hero-content">
+            <!-- Small Logo Above Text -->
+            <div class="hero-small-logo">
                 <img src="https://www.cryptotimes.io/wp-content/uploads/2024/02/Deutsche-Borse-Group-website.jpg" alt="Deutsche Borse Group">
             </div>
-        </div>
-    </header>
 
-    <section class="hero">
-        <div class="container">
             <h1>
-                Ihre finanzielle Zukunft <span>wartet nicht</span>
+                Ihre finanzielle Zukunft
+                <span>wartet nicht</span>
             </h1>
             <p class="hero-subtitle">
-                Was erfolgreiche Menschen ueber Vermoegensaufbau wissen - und warum die meisten zu spaet damit anfangen
+                Was erfolgreiche Menschen ueber Vermoegensaufbau wissen
             </p>
             <p class="hero-hint">
-                (Psst... Es ist nicht zu spaet. Aber das Fenster schliesst sich)
+                Psst... Es ist nicht zu spaet. Aber das Fenster schliesst sich
             </p>
         </div>
     </section>
 
-    <section class="secrets-section">
+    <!-- Insights Section -->
+    <section class="insights-section">
         <div class="container">
-            <div class="secrets-grid">
-                <div class="secret-card">
+            <p class="section-title">Drei Wahrheiten</p>
+            
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-number">01</div>
                     <h3>Der stille Vermoegensaufbau</h3>
                     <p>Warum die meisten Menschen ihr ganzes Leben arbeiten - und trotzdem nicht wirklich frei sind</p>
+                    <div class="insight-quote">Das System ist nicht fuer Ihre Freiheit gebaut</div>
                 </div>
-                <div class="secret-card">
+
+                <div class="insight-card">
+                    <div class="insight-number">02</div>
                     <h3>Der falsche Zeitpunkt</h3>
                     <p>"Ich fange naechstes Jahr an" - Der teuerste Satz, den Sie je sagen werden</p>
+                    <div class="insight-quote">Jedes Jahr des Wartens kostet Sie tausende</div>
                 </div>
-                <div class="secret-card">
+
+                <div class="insight-card">
+                    <div class="insight-number">03</div>
                     <h3>Die unsichtbare Alternative</h3>
                     <p>Was Experten schon lange wissen: Es gibt einen smarteren Weg</p>
+                    <div class="insight-quote">Die besten Chancen bleiben unter dem Radar</div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Form Section -->
     <section class="form-section">
         <div class="container">
             <div class="form-container">
@@ -307,7 +414,7 @@
                         <h2>Entdecken Sie Ihre Moeglichkeiten</h2>
                         <p>Kostenlose Erstberatung - Diskret und unverbindlich</p>
                     </div>
-                    
+
                     <div class="urgency">
                         Nur noch wenige Plaetze verfuegbar diese Woche
                     </div>
@@ -317,22 +424,22 @@
                             <label for="firstName">Vorname <span>*</span></label>
                             <input type="text" id="firstName" name="firstName" placeholder="Ihr Vorname" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="lastName">Nachname <span>*</span></label>
                             <input type="text" id="lastName" name="lastName" placeholder="Ihr Nachname" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="email">E-Mail <span>*</span></label>
                             <input type="email" id="email" name="email" placeholder="ihre@email.de" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="phone">Telefon <span>*</span></label>
                             <input type="tel" id="phone" name="phone" placeholder="+49 123 456789" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="country">Land <span>*</span></label>
                             <select id="country" name="country" required>
@@ -345,7 +452,7 @@
                                 <option value="other">Anderes</option>
                             </select>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="experience">Bisherige Erfahrung</label>
                             <select id="experience" name="experience">
@@ -356,7 +463,7 @@
                                 <option value="lost">Wiederaufbau nach Verlusten</option>
                             </select>
                         </div>
-                        
+
                         <button type="submit" class="submit-btn" id="submitBtn">
                             Meine Moeglichkeiten entdecken
                         </button>
@@ -364,17 +471,17 @@
 
                     <div class="trust-badges">
                         <div class="trust-badge">
-                            <span>âœ“</span> 500+ zufriedene Kunden
+                            <span>&#10003;</span> 500+ zufriedene Kunden
                         </div>
                         <div class="trust-badge">
-                            <span>âœ“</span> Diskret & sicher
+                            <span>&#10003;</span> Diskret &amp; sicher
                         </div>
                         <div class="trust-badge">
-                            <span>âœ“</span> Keine Verpflichtung
+                            <span>&#10003;</span> Keine Verpflichtung
                         </div>
                     </div>
                 </div>
-                
+
                 <div id="success-message" class="success-message">
                     <h3>Herzlichen Glueckwunsch zum ersten Schritt</h3>
                     <p>Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
