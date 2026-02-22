@@ -1,49 +1,18 @@
-<1DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deutsche Borse Group | Institutional Trading Infrastructure</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Deutsche Borse Group | Investment Solutions</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #0066FF;
-            --primary-dark: #0052CC;
-            --accent: #00D4FF;
-            --dark: #0A0A0F;
-            --dark-light: #12121A;
-            --gray: #1E1E2E;
-            --text: #FFFFFF;
-            --text-muted: #8B8B9E;
-            --success: #00C853;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--dark);
-            color: var(--text);
+            background: #0A0A0F;
+            color: #FFFFFF;
             line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
         }
 
         .container {
@@ -85,57 +54,24 @@
             text-align: center;
         }
 
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background: rgba(0, 102, 255, 0.1);
-            border: 1px solid rgba(0, 102, 255, 0.3);
-            border-radius: 100px;
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--accent);
-            margin-bottom: 32px;
-        }
-
         .hero h1 {
-            font-size: 56px;
+            font-size: 48px;
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 24px;
-            letter-spacing: -2px;
         }
 
         .hero h1 span {
             background: linear-gradient(135deg, #0066FF 0%, #00D4FF 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .hero p {
             font-size: 20px;
-            color: var(--text-muted);
+            color: #8B8B9E;
             max-width: 600px;
             margin: 0 auto 40px;
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 48px;
-            margin-top: 48px;
-        }
-
-        .stat-value {
-            font-size: 36px;
-            font-weight: 700;
-        }
-
-        .stat-label {
-            font-size: 14px;
-            color: var(--text-muted);
         }
 
         .form-section {
@@ -163,7 +99,7 @@
         }
 
         .form-header p {
-            color: var(--text-muted);
+            color: #8B8B9E;
             font-size: 15px;
         }
 
@@ -179,7 +115,7 @@
         }
 
         .form-group label span {
-            color: var(--accent);
+            color: #00D4FF;
         }
 
         .form-group input,
@@ -189,14 +125,15 @@
             background: rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
-            color: var(--text);
+            color: #FFFFFF;
             font-size: 15px;
+            font-family: inherit;
         }
 
         .form-group input:focus,
         .form-group select:focus {
             outline: none;
-            border-color: var(--primary);
+            border-color: #0066FF;
         }
 
         .submit-btn {
@@ -210,31 +147,16 @@
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.3s;
+            font-family: inherit;
         }
 
         .submit-btn:hover {
             transform: translateY(-2px);
         }
 
-        .success-message {
-            display: none;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .success-message h3 {
-            font-size: 24px;
-            margin-bottom: 12px;
-            color: var(--success);
-        }
-
-        .success-message p {
-            color: var(--text-muted);
-        }
-
         .features {
             padding: 100px 0;
-            background: linear-gradient(180deg, var(--dark) 0%, var(--dark-light) 100%);
+            background: linear-gradient(180deg, #0A0A0F 0%, #12121A 100%);
         }
 
         .section-header {
@@ -249,15 +171,13 @@
         }
 
         .section-header p {
-            color: var(--text-muted);
+            color: #8B8B9E;
             font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 24px;
         }
 
@@ -266,23 +186,17 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
             padding: 32px;
-            transition: transform 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(0, 102, 255, 0.3);
         }
 
         .feature-card h3 {
             font-size: 20px;
             font-weight: 600;
             margin-bottom: 12px;
-            color: var(--accent);
+            color: #00D4FF;
         }
 
         .feature-card p {
-            color: var(--text-muted);
+            color: #8B8B9E;
             font-size: 15px;
         }
 
@@ -293,33 +207,29 @@
         }
 
         footer p {
-            color: var(--text-muted);
+            color: #8B8B9E;
             font-size: 14px;
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero-stats {
-                flex-direction: column;
-                gap: 24px;
-            }
-            
-            .form-container {
-                padding: 32px 24px;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
+            .hero h1 { font-size: 36px; }
+            .form-container { padding: 32px 24px; }
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .success-message h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: #00C853;
         }
     </style>
 </head>
 <body>
-    <div class="bg-animation"></div>
-
     <header>
         <div class="container">
             <div class="logo">
@@ -331,30 +241,13 @@
 
     <section class="hero">
         <div class="container">
-            <div class="hero-badge">
-                Trusted by 500+ Institutional Clients
-            </div>
             <h1>
-                The Future of <span>Financial Infrastructure</span>
+                Secure Your <span>Financial Future</span>
             </h1>
             <p>
-                Experience sub-millisecond execution, deep liquidity pools, and institutional-grade security. 
-                The trading infrastructure powering Europe's leading exchanges.
+                Expert portfolio management and investment advice for German-speaking investors ages 40-65. 
+                No experience required. Start building your pension fund today.
             </p>
-            <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-value">99.99%</div>
-                    <div class="stat-label">Uptime SLA</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-value">&lt;1ms</div>
-                    <div class="stat-label">Latency</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-value">EUR2.5T</div>
-                    <div class="stat-label">Daily Volume</div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -363,48 +256,54 @@
             <div class="form-container">
                 <div id="form-content">
                     <div class="form-header">
-                        <h2>Request a Consultation</h2>
-                        <p>Connect with our solutions team for a personalized demo</p>
+                        <h2>Get Your Free Investment Review</h2>
+                        <p>Speak with our experts - No obligation, completely free</p>
                     </div>
                     <form id="leadForm">
                         <div class="form-group">
-                            <label for="name">Full Name <span>*</span></label>
-                            <input type="text" id="name" name="name" placeholder="John Smith" required>
+                            <label for="firstName">First Name <span>*</span></label>
+                            <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Business Email <span>*</span></label>
-                            <input type="email" id="email" name="email" placeholder="john@company.com" required>
+                            <label for="lastName">Last Name <span>*</span></label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
                         </div>
                         <div class="form-group">
-                            <label for="company">Company <span>*</span></label>
-                            <input type="text" id="company" name="company" placeholder="Your Company Name" required>
+                            <label for="email">Email <span>*</span></label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
                         </div>
                         <div class="form-group">
-                            <label for="title">Job Title <span>*</span></label>
-                            <input type="text" id="title" name="title" placeholder="Chief Technology Officer" required>
+                            <label for="phone">Phone <span>*</span></label>
+                            <input type="tel" id="phone" name="phone" placeholder="+49 123 456789" required>
                         </div>
                         <div class="form-group">
-                            <label for="interest">Area of Interest <span>*</span></label>
-                            <select id="interest" name="interest" required>
-                                <option value="">Select your interest</option>
-                                <option value="trading">Trading &amp; Execution</option>
-                                <option value="clearing">Clearing &amp; Settlement</option>
-                                <option value="market-data">Market Data &amp; Analytics</option>
-                                <option value="index">Index Services</option>
-                                <option value="technology">Technology &amp; Connectivity</option>
+                            <label for="country">Country <span>*</span></label>
+                            <select id="country" name="country" required>
+                                <option value="">Select Country</option>
+                                <option value="DE">Germany</option>
+                                <option value="AT">Austria</option>
+                                <option value="CH">Switzerland</option>
+                                <option value="NL">Netherlands</option>
+                                <option value="BE">Belgium</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="phone">Phone (optional)</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
+                            <label for="experience">Investment Experience</label>
+                            <select id="experience" name="experience">
+                                <option value="">Select Experience</option>
+                                <option value="beginner">Beginner - Just starting</option>
+                                <option value="intermediate">Some experience</option>
+                                <option value="experienced">Experienced investor</option>
+                                <option value="lost-money">Lost money - Need help</option>
+                            </select>
                         </div>
-                        <button type="submit" class="submit-btn">Schedule Consultation</button>
+                        <button type="submit" class="submit-btn" id="submitBtn">Get Free Expert Advice</button>
                     </form>
                 </div>
                 <div id="success-message" class="success-message">
-                    <h3>Request Received</h3>
-                    <p>Our team will contact you within 24 hours to schedule your personalized consultation.</p>
+                    <h3>Thank You!</h3>
+                    <p>Our team will contact you within 24 hours.</p>
                 </div>
             </div>
         </div>
@@ -413,33 +312,33 @@
     <section class="features">
         <div class="container">
             <div class="section-header">
-                <h2>Why Leading Institutions Choose Us</h2>
-                <p>Enterprise-grade infrastructure designed for the world's most demanding financial institutions</p>
+                <h2>Why Thousands Trust Us</h2>
+                <p>Professional guidance for investors at every stage</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <h3>Ultra-Low Latency</h3>
-                    <p>Sub-millisecond execution with co-location services across European data centers. Direct market access optimized for high-frequency trading.</p>
+                    <h3>No Experience Needed</h3>
+                    <p>Perfect for beginners. Our experts guide you step by step through building your first portfolio.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Institutional Security</h3>
-                    <p>Bank-grade security with multi-layer encryption, SOC 2 Type II compliance, and 24/7 security operations center monitoring.</p>
+                    <h3>Recover From Losses</h3>
+                    <p>Lost money before? We specialize in helping investors recover and build sustainable wealth.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Deep Liquidity</h3>
-                    <p>Access to Europe's deepest liquidity pools with EUR2.5 trillion in daily trading volume across Xetra and Eurex markets.</p>
+                    <h3>Pension Planning</h3>
+                    <p>Secure your retirement with smart pension strategies. Ages 40-65, it's never too late to start.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Global Connectivity</h3>
-                    <p>FIX 4.4/5.0, native APIs, and co-location in 12 data centers worldwide. Connect your systems to global markets seamlessly.</p>
+                    <h3>German Market Expertise</h3>
+                    <p>Deep understanding of German-speaking markets, regulations, and investment opportunities.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Real-Time Analytics</h3>
-                    <p>Advanced market data feeds with 50+ million data points daily. Power your algorithms with comprehensive analytics and insights.</p>
+                    <h3>Personalized Advice</h3>
+                    <p>Every investor is unique. Get tailored recommendations based on your goals and timeline.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Regulatory Compliant</h3>
-                    <p>Full MiFID II, EMIR, and GDPR compliance. Stay ahead of regulatory requirements with our compliant infrastructure.</p>
+                    <h3>Start Any Amount</h3>
+                    <p>Begin with what you have. Our solutions work for any budget.</p>
                 </div>
             </div>
         </div>
@@ -447,42 +346,15 @@
 
     <footer>
         <div class="container">
-            <p>&amp;copy; 2025 Deutsche Borse Group. All rights reserved. | Institutional-grade financial infrastructure.</p>
+            <p>2025 Deutsche Borse Group. All rights reserved. Not investment advice.</p>
         </div>
     </footer>
 
     <script>
-        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            const btn = document.querySelector('.submit-btn');
-            btn.textContent = 'Processing...';
-            btn.disabled = true;
-            
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                company: document.getElementById('company').value,
-                title: document.getElementById('title').value,
-                interest: document.getElementById('interest').value,
-                phone: document.getElementById('phone').value,
-                timestamp: new Date().toISOString(),
-                source: 'landing-page',
-                campaign: 'deutsche-boerse-leads'
-            };
-            
-            try {
-                await new Promise(resolve => setTimeout(resolve, 1500));
-                
-                document.getElementById('form-content').style.display = 'none';
-                document.getElementById('success-message').style.display = 'block';
-                
-            } catch (error) {
-                console.error('Error:', error);
-                btn.textContent = 'Schedule Consultation';
-                btn.disabled = false;
-                alert('There was an error submitting your request. Please try again.');
-            }
+            document.getElementById('form-content').style.display = 'none';
+            document.getElementById('success-message').style.display = 'block';
         });
     </script>
 </body>
