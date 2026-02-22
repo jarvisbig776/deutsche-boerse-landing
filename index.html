@@ -8,185 +8,179 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        body {
+        html, body {
+            height: 100vh;
+            overflow: hidden;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #001233;
-            color: #FFFFFF;
-            line-height: 1.6;
-            min-height: 100vh;
         }
 
-        /* Full Background with Logo */
-        .page-wrapper {
-            min-height: 100vh;
-            position: relative;
+        /* Full Screen Background with Logo */
+        body {
             background: 
-                linear-gradient(135deg, rgba(0, 18, 51, 0.92) 0%, rgba(0, 29, 69, 0.88) 50%, rgba(0, 53, 102, 0.92) 100%),
+                linear-gradient(135deg, rgba(0, 18, 51, 0.85) 0%, rgba(0, 29, 69, 0.9) 100%),
                 url('https://www.cryptotimes.io/wp-content/uploads/2024/02/Deutsche-Borse-Group-website.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
             background-repeat: no-repeat;
+            color: #FFFFFF;
         }
 
-        /* Main Layout - Three Columns */
-        .main-layout {
-            display: grid;
-            grid-template-columns: 1fr 480px 1fr;
-            min-height: 100vh;
-            gap: 40px;
-            padding: 40px;
-            max-width: 1600px;
-            margin: 0 auto;
-        }
-
-        /* Left Panel - Text Content */
-        .left-panel {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 40px 20px;
-        }
-
-        .hero-content h1 {
-            font-size: 42px;
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 24px;
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero-content h1 span {
-            color: #00B4D8;
-            display: block;
-            margin-top: 8px;
-        }
-
-        .hero-subtitle {
-            font-size: 18px;
-            color: #90E0EF;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        .hero-hint {
-            font-size: 14px;
-            color: #CAF0F8;
-            font-style: italic;
-            padding: 16px;
-            background: rgba(0, 180, 216, 0.1);
-            border-left: 3px solid #00B4D8;
-            border-radius: 0 8px 8px 0;
-        }
-
-        /* Insights Cards */
-        .insights {
-            margin-top: 60px;
-        }
-
-        .insight-card {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
-            border: 1px solid rgba(0, 180, 216, 0.25);
-            border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 16px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .insight-card:hover {
-            border-color: rgba(0, 180, 216, 0.5);
-            transform: translateX(8px);
-        }
-
-        .insight-card h3 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #00B4D8;
-        }
-
-        .insight-card p {
-            color: #CAF0F8;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        /* Center Panel - Registration Form */
-        .center-panel {
+        /* Single Screen Container */
+        .main-container {
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 20px;
         }
 
-        .form-container {
-            width: 100%;
+        /* Card Layout - Everything in one box */
+        .master-card {
             background: linear-gradient(145deg, rgba(0, 24, 69, 0.95) 0%, rgba(0, 53, 102, 0.95) 100%);
-            border: 1px solid rgba(0, 180, 216, 0.4);
+            border: 1px solid rgba(0, 180, 216, 0.3);
             border-radius: 24px;
-            padding: 40px;
+            padding: 30px 40px;
+            max-width: 1000px;
+            width: 100%;
             backdrop-filter: blur(20px);
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 180, 216, 0.1);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 180, 216, 0.1);
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 40px;
+            align-items: start;
         }
 
-        .form-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, #00B4D8, transparent);
-            border-radius: 2px;
+        /* Left Side - Text Content */
+        .text-side {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .main-headline {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 4px;
+        }
+
+        .main-headline span {
+            color: #00B4D8;
+        }
+
+        .sub-text {
+            font-size: 15px;
+            color: #90E0EF;
+            line-height: 1.5;
+        }
+
+        .hint-box {
+            background: rgba(0, 180, 216, 0.1);
+            border-left: 3px solid #00B4D8;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 14px;
+            color: #CAF0F8;
+            font-style: italic;
+            margin-top: 4px;
+        }
+
+        /* Hook Cards - Smaller, inline */
+        .hooks {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .hook {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 180, 216, 0.2);
+            border-radius: 10px;
+            padding: 12px 14px;
+        }
+
+        .hook-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #00B4D8;
+            margin-bottom: 4px;
+        }
+
+        .hook-text {
+            font-size: 12px;
+            color: #CAF0F8;
+            line-height: 1.4;
+        }
+
+        /* Stats Row */
+        .stats-row {
+            display: flex;
+            gap: 20px;
+            margin-top: 8px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 22px;
+            font-weight: 800;
+            color: #00B4D8;
+        }
+
+        .stat-label {
+            font-size: 10px;
+            color: #90E0EF;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Right Side - Form */
+        .form-side {
+            background: rgba(0, 8, 20, 0.4);
+            border: 1px solid rgba(0, 180, 216, 0.25);
+            border-radius: 16px;
+            padding: 24px;
         }
 
         .form-header {
             text-align: center;
-            margin-bottom: 28px;
-        }
-
-        .form-header::before {
-            content: ' ';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, #00B4D8, transparent);
-            margin: 0 auto 24px;
-            border-radius: 2px;
+            margin-bottom: 16px;
         }
 
         .form-header h2 {
-            font-size: 24px;
+            font-size: 18px;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
 
         .form-header p {
+            font-size: 12px;
             color: #90E0EF;
-            font-size: 14px;
         }
 
         .urgency {
-            background: rgba(0, 180, 216, 0.15);
-            border: 1px solid rgba(0, 180, 216, 0.3);
-            border-radius: 10px;
-            padding: 12px;
-            margin-bottom: 24px;
+            background: rgba(0, 180, 216, 0.1);
+            border: 1px solid rgba(0, 180, 216, 0.25);
+            border-radius: 8px;
+            padding: 8px;
+            margin-bottom: 14px;
             text-align: center;
-            font-size: 13px;
+            font-size: 11px;
             color: #00B4D8;
             font-weight: 500;
         }
 
         .form-group {
-            margin-bottom: 16px;
+            margin-bottom: 10px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 6px;
-            font-size: 13px;
+            margin-bottom: 3px;
+            font-size: 11px;
             font-weight: 500;
         }
 
@@ -197,306 +191,212 @@
         .form-group input,
         .form-group select {
             width: 100%;
-            padding: 12px 14px;
-            background: rgba(0, 8, 20, 0.6);
-            border: 1px solid rgba(0, 180, 216, 0.25);
-            border-radius: 10px;
+            padding: 9px 11px;
+            background: rgba(0, 8, 20, 0.5);
+            border: 1px solid rgba(0, 180, 216, 0.2);
+            border-radius: 8px;
             color: #FFFFFF;
-            font-size: 14px;
+            font-size: 13px;
             font-family: inherit;
-            transition: all 0.3s;
         }
 
         .form-group input:focus,
         .form-group select:focus {
             outline: none;
             border-color: #00B4D8;
-            box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.15);
         }
 
         .submit-btn {
             width: 100%;
-            padding: 14px;
+            padding: 12px;
             background: linear-gradient(135deg, #0077B6 0%, #00B4D8 100%);
             border: none;
-            border-radius: 10px;
+            border-radius: 8px;
             color: white;
-            font-size: 15px;
+            font-size: 13px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
             font-family: inherit;
-            margin-top: 8px;
+            margin-top: 4px;
         }
 
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 180, 216, 0.4);
+            box-shadow: 0 8px 20px rgba(0, 180, 216, 0.4);
         }
 
         .trust-badges {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-            padding-top: 20px;
+            gap: 16px;
+            margin-top: 12px;
+            padding-top: 12px;
             border-top: 1px solid rgba(0, 180, 216, 0.15);
         }
 
         .trust-badge {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 12px;
+            font-size: 10px;
             color: #90E0EF;
         }
 
-        /* Right Panel - Additional Content */
-        .right-panel {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 40px 20px;
-        }
-
-        .feature-box {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
-            border: 1px solid rgba(0, 180, 216, 0.2);
-            border-radius: 16px;
-            padding: 28px;
-            margin-bottom: 20px;
-            backdrop-filter: blur(10px);
+        /* Footer */
+        .footer {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.5);
             text-align: center;
-        }
-
-        .feature-box .stat {
-            font-size: 36px;
-            font-weight: 800;
-            color: #00B4D8;
-            margin-bottom: 8px;
-        }
-
-        .feature-box p {
-            color: #90E0EF;
-            font-size: 14px;
-        }
-
-        .testimonial {
-            background: linear-gradient(145deg, rgba(0, 180, 216, 0.1) 0%, rgba(0, 119, 182, 0.05) 100%);
-            border: 1px solid rgba(0, 180, 216, 0.2);
-            border-radius: 16px;
-            padding: 24px;
-            backdrop-filter: blur(10px);
-        }
-
-        .testimonial p {
-            font-style: italic;
-            color: #CAF0F8;
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 16px;
-        }
-
-        .testimonial .author {
-            color: #00B4D8;
-            font-size: 13px;
-            font-weight: 500;
-        }
-
-        footer {
-            padding: 30px 0;
-            text-align: center;
-            background: rgba(0, 8, 20, 0.8);
-        }
-
-        footer p {
-            color: #90E0EF;
-            font-size: 12px;
         }
 
         .success-message {
             display: none;
             text-align: center;
-            padding: 40px 20px;
+            padding: 20px;
         }
 
         .success-message h3 {
-            font-size: 24px;
-            margin-bottom: 12px;
+            font-size: 20px;
+            margin-bottom: 8px;
             color: #00C853;
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 1200px) {
-            .main-layout {
+        /* Mobile */
+        @media (max-width: 900px) {
+            .master-card {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                max-height: 95vh;
+                overflow-y: auto;
                 padding: 20px;
+                gap: 20px;
             }
             
-            .left-panel, .right-panel {
-                order: 1;
-            }
-            
-            .center-panel {
-                order: 0;
-                max-width: 480px;
-                margin: 0 auto;
-            }
-            
-            .hero-content h1 { font-size: 32px; }
-            .insights { margin-top: 30px; }
-        }
-
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 28px; }
-            .form-container { padding: 28px 24px; }
-            .trust-badges { flex-direction: column; gap: 12px; }
+            .main-headline { font-size: 28px; }
+            .text-side { gap: 12px; }
+            .hooks { gap: 8px; }
+            .stats-row { gap: 16px; }
+            .footer { position: relative; margin-top: 20px; }
         }
     </style>
 </head>
 <body>
-    <div class="page-wrapper">
-        <div class="main-layout">
-            <!-- Left Panel -->
-            <div class="left-panel">
-                <div class="hero-content">
-                    <h1>
-                        Ihre finanzielle Zukunft
-                        <span>wartet nicht</span>
-                    </h1>
-                    <p class="hero-subtitle">
-                        Was erfolgreiche Menschen ueber Vermoegensaufbau wissen - und warum die meisten zu spaet damit anfangen
-                    </p>
-                    <p class="hero-hint">
-                        Psst... Es ist nicht zu spaet. Aber das Fenster schliesst sich
-                    </p>
-                </div>
+    <div class="main-container">
+        <div class="master-card">
+            <!-- Left Side - Text -->
+            <div class="text-side">
+                <h1 class="main-headline">
+                    Ihre finanzielle Zukunft
+                    <span>wartet nicht</span>
+                </h1>
+                <p class="sub-text">Was erfolgreiche Menschen ueber Vermoegensaufbau wissen</p>
+                <div class="hint-box">Es ist nicht zu spaet. Aber das Fenster schliesst sich.</div>
 
-                <div class="insights">
-                    <div class="insight-card">
-                        <h3>Der stille Vermoegensaufbau</h3>
-                        <p>Warum die meisten Menschen ihr ganzes Leben arbeiten - und trotzdem nicht wirklich frei sind</p>
+                <div class="hooks">
+                    <div class="hook">
+                        <div class="hook-title">Der stille Vermoegensaufbau</div>
+                        <div class="hook-text">Warum die meisten Menschen ihr ganzes Leben arbeiten - und trotzdem nie frei sind</div>
                     </div>
-                    <div class="insight-card">
-                        <h3>Der falsche Zeitpunkt</h3>
-                        <p>"Ich fange naechstes Jahr an" - Der teuerste Satz, den Sie je sagen werden</p>
+                    <div class="hook">
+                        <div class="hook-title">Der falsche Zeitpunkt</div>
+                        <div class="hook-text">"Ich fange naechstes Jahr an" - Der teuerste Satz, den Sie je sagen werden</div>
                     </div>
-                    <div class="insight-card">
-                        <h3>Die unsichtbare Alternative</h3>
-                        <p>Was Experten schon lange wissen: Es gibt einen smarteren Weg</p>
+                    <div class="hook">
+                        <div class="hook-title">Die unsichtbare Alternative</div>
+                        <div class="hook-text">Was Experten wissen: Es gibt einen smarteren Weg</div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Center Panel - Registration Form -->
-            <div class="center-panel">
-                <div class="form-container">
-                    <div id="form-content">
-                        <div class="form-header">
-                            <h2>Entdecken Sie Ihre Moeglichkeiten</h2>
-                            <p>Kostenlose Erstberatung - Diskret und unverbindlich</p>
-                        </div>
-
-                        <div class="urgency">
-                            Nur noch wenige Plaetze verfuegbar
-                        </div>
-
-                        <form id="leadForm">
-                            <div class="form-group">
-                                <label for="firstName">Vorname <span>*</span></label>
-                                <input type="text" id="firstName" name="firstName" placeholder="Ihr Vorname" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="lastName">Nachname <span>*</span></label>
-                                <input type="text" id="lastName" name="lastName" placeholder="Ihr Nachname" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email">E-Mail <span>*</span></label>
-                                <input type="email" id="email" name="email" placeholder="ihre@email.de" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="phone">Telefon <span>*</span></label>
-                                <input type="tel" id="phone" name="phone" placeholder="+49 123 456789" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="country">Land <span>*</span></label>
-                                <select id="country" name="country" required>
-                                    <option value="">Land auswaehlen</option>
-                                    <option value="DE">Deutschland</option>
-                                    <option value="AT">Oesterreich</option>
-                                    <option value="CH">Schweiz</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="experience">Bisherige Erfahrung</label>
-                                <select id="experience" name="experience">
-                                    <option value="">Bitte waehlen</option>
-                                    <option value="beginner">Anfaenger - Noch nicht gestartet</option>
-                                    <option value="some">Ein wenig Erfahrung</option>
-                                    <option value="experienced">Erfahrener Anleger</option>
-                                    <option value="lost">Wiederaufbau nach Verlusten</option>
-                                </select>
-                            </div>
-                            
-                            <button type="submit" class="submit-btn" id="submitBtn">
-                                Meine Moeglichkeiten entdecken
-                            </button>
-                        </form>
-
-                        <div class="trust-badges">
-                            <div class="trust-badge">
-                                <span>&#10003;</span> 500+ Kunden
-                            </div>
-                            <div class="trust-badge">
-                                <span>&#10003;</span> Diskret
-                            </div>
-                            <div class="trust-badge">
-                                <span>&#10003;</span> Keine Verpflichtung
-                            </div>
-                        </div>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <div class="stat-value">+12.5%</div>
+                        <div class="stat-label">Jahresrendite</div>
                     </div>
-                    
-                    <div id="success-message" class="success-message">
-                        <h3>Herzlichen Glueckwunsch zum ersten Schritt</h3>
-                        <p>Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+                    <div class="stat-item">
+                        <div class="stat-value">20+</div>
+                        <div class="stat-label">Jahre Erfahrung</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">98%</div>
+                        <div class="stat-label">Zufriedenheit</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Right Panel -->
-            <div class="right-panel">
-                <div class="feature-box">
-                    <div class="stat">+12.5%</div>
-                    <p>Durchschnittliche Jahresrendite unserer Beratungskunden</p>
+            <!-- Right Side - Form -->
+            <div class="form-side">
+                <div id="form-content">
+                    <div class="form-header">
+                        <h2>Entdecken Sie Ihre Moeglichkeiten</h2>
+                        <p>Kostenlose Erstberatung</p>
+                    </div>
+
+                    <div class="urgency">Nur noch wenige Plaetze</div>
+
+                    <form id="leadForm">
+                        <div class="form-group">
+                            <label>Vorname <span>*</span></label>
+                            <input type="text" name="firstName" placeholder="Ihr Vorname" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Nachname <span>*</span></label>
+                            <input type="text" name="lastName" placeholder="Ihr Nachname" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>E-Mail <span>*</span></label>
+                            <input type="email" name="email" placeholder="ihre@email.de" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Telefon <span>*</span></label>
+                            <input type="tel" name="phone" placeholder="+49 123 456789" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Land <span>*</span></label>
+                            <select name="country" required>
+                                <option value="">Land waehlen</option>
+                                <option value="DE">Deutschland</option>
+                                <option value="AT">Oesterreich</option>
+                                <option value="CH">Schweiz</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Bisherige Erfahrung</label>
+                            <select name="experience">
+                                <option value="">Bitte waehlen</option>
+                                <option value="beginner">Anfaenger</option>
+                                <option value="some">Ein wenig</option>
+                                <option value="experienced">Erfahren</option>
+                                <option value="lost">Wiederaufbau</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            Meine Moeglichkeiten entdecken
+                        </button>
+                    </form>
+
+                    <div class="trust-badges">
+                        <div class="trust-badge">&#10003; 500+ Kunden</div>
+                        <div class="trust-badge">&#10003; 100% Diskret</div>
+                        <div class="trust-badge">&#10003; Keine Verpflichtung</div>
+                    </div>
                 </div>
 
-                <div class="feature-box">
-                    <div class="stat">20+</div>
-                    <p>Jahre Erfahrung im Vermoegensmanagement</p>
-                </div>
-
-                <div class="feature-box">
-                    <div class="stat">98%</div>
-                    <p>Zufriedenheitsrate unserer Mandanten</p>
-                </div>
-
-                <div class="testimonial">
-                    <p>"Nach 25 Jahren ohne Ruecklage habe ich endlich einen Plan. Innerhalb von 6 Monaten sehe ich echte Fortschritte."</p>
-                    <div class="author">â€” Klaus M., 58, Muenchen</div>
+                <div id="success-message" class="success-message">
+                    <h3>Herzlichen Glueckwunsch!</h3>
+                    <p>Wir melden uns in 24h bei Ihnen.</p>
                 </div>
             </div>
         </div>
-
-        <footer>
-            <p>2025 Deutsche Borse Group. Alle Rechte vorbehalten. | Keine Anlageberatung.</p>
-        </footer>
     </div>
+
+    <div class="footer">2025 Deutsche Borse Group | Keine Anlageberatung</div>
 
     <script>
         document.getElementById('leadForm').addEventListener('submit', function(e) {
