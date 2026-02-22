@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deutsche Borse Group | Investment Solutions</title>
+    <title>Finanzielle Freiheit | Intelligentes VermÃ¶gensmanagement</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -37,19 +37,13 @@
             width: auto;
         }
 
-        .logo-text {
-            font-size: 18px;
-            font-weight: 600;
-            color: #8B8B9E;
-        }
-
         .hero {
             padding: 80px 0 60px;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 52px;
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 24px;
@@ -61,15 +55,54 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .hero p {
-            font-size: 20px;
+        .hero-subtitle {
+            font-size: 24px;
             color: #8B8B9E;
-            max-width: 600px;
-            margin: 0 auto 40px;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+
+        .hero-hint {
+            font-size: 16px;
+            color: #00D4FF;
+            font-style: italic;
+        }
+
+        .secrets-section {
+            padding: 60px 0;
+            background: linear-gradient(180deg, #0A0A0F 0%, #12121A 100%);
+        }
+
+        .secrets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .secret-card {
+            background: linear-gradient(135deg, #12121A 0%, #1E1E2E 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+
+        .secret-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #00D4FF;
+        }
+
+        .secret-card p {
+            color: #8B8B9E;
+            font-size: 15px;
         }
 
         .form-section {
-            padding: 60px 0 100px;
+            padding: 80px 0 100px;
         }
 
         .form-container {
@@ -79,6 +112,18 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 24px;
             padding: 48px;
+            position: relative;
+        }
+
+        .form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00D4FF, transparent);
         }
 
         .form-header {
@@ -89,12 +134,23 @@
         .form-header h2 {
             font-size: 28px;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         .form-header p {
             color: #8B8B9E;
             font-size: 15px;
+        }
+
+        .urgency {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 24px;
+            text-align: center;
+            font-size: 14px;
+            color: #00D4FF;
         }
 
         .form-group {
@@ -132,12 +188,12 @@
 
         .submit-btn {
             width: 100%;
-            padding: 16px;
+            padding: 18px;
             background: linear-gradient(135deg, #0066FF 0%, #00D4FF 100%);
             border: none;
             border-radius: 12px;
             color: white;
-            font-size: 16px;
+            font-size: 17px;
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.3s;
@@ -148,50 +204,21 @@
             transform: translateY(-2px);
         }
 
-        .features {
-            padding: 100px 0;
-            background: linear-gradient(180deg, #0A0A0F 0%, #12121A 100%);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 64px;
-        }
-
-        .section-header h2 {
-            font-size: 40px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-
-        .section-header p {
-            color: #8B8B9E;
-            font-size: 18px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        .trust-badges {
+            display: flex;
+            justify-content: center;
             gap: 24px;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .feature-card {
-            background: linear-gradient(135deg, #12121A 0%, #1E1E2E 100%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 32px;
-        }
-
-        .feature-card h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #00D4FF;
-        }
-
-        .feature-card p {
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
             color: #8B8B9E;
-            font-size: 15px;
         }
 
         footer {
@@ -202,12 +229,7 @@
 
         footer p {
             color: #8B8B9E;
-            font-size: 14px;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 36px; }
-            .form-container { padding: 32px 24px; }
+            font-size: 13px;
         }
 
         .success-message {
@@ -221,14 +243,18 @@
             margin-bottom: 12px;
             color: #00C853;
         }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .form-container { padding: 32px 24px; }
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
             <div class="logo">
-                <img src="https://www.cryptotimes.io/wp-content/uploads/2024/02/Deutsche-Borse-Group-website.jpg" alt="Deutsche Borse Group" onerror="this.style.display='none'">
-                <div class="logo-text">Investment Solutions</div>
+                <img src="https://www.cryptotimes.io/wp-content/uploads/2024/02/Deutsche-Borse-Group-website.jpg" alt="Deutsche Borse" onerror="this.style.display='none'">
             </div>
         </div>
     </header>
@@ -236,12 +262,33 @@
     <section class="hero">
         <div class="container">
             <h1>
-                Secure Your <span>Financial Future</span>
+                Ihre finanzielle Zukunft <span>wartet nicht</span>
             </h1>
-            <p>
-                Expert portfolio management and investment advice for German-speaking investors ages 40-65. 
-                No experience required. Start building your pension fund today.
+            <p class="hero-subtitle">
+                Was erfolgreiche Menschen ueber Vermoegensaufbau wissen - und warum die meisten zu spaet damit anfangen
             </p>
+            <p class="hero-hint">
+                (Psst... Es ist nicht zu spaet. Aber das Fenster schliesst sich)
+            </p>
+        </div>
+    </section>
+
+    <section class="secrets-section">
+        <div class="container">
+            <div class="secrets-grid">
+                <div class="secret-card">
+                    <h3>Der stille Vermoegensaufbau</h3>
+                    <p>Warum die meisten Menschen ihr ganzes Leben arbeiten - und trotzdem nicht wirklich frei sind</p>
+                </div>
+                <div class="secret-card">
+                    <h3>Der falsche Zeitpunkt</h3>
+                    <p>"Ich fange naechstes Jahr an" - Der teuerste Satz, den Sie je sagen werden</p>
+                </div>
+                <div class="secret-card">
+                    <h3>Die unsichtbare Alternative</h3>
+                    <p>Was Experten schon lange wissen: Es gibt einen smarteren Weg</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -250,89 +297,73 @@
             <div class="form-container">
                 <div id="form-content">
                     <div class="form-header">
-                        <h2>Get Your Free Investment Review</h2>
-                        <p>Speak with our experts - No obligation, completely free</p>
+                        <h2>Entdecken Sie Ihre Moeglichkeiten</h2>
+                        <p>Kostenlose Erstberatung - Diskret und unverbindlich</p>
                     </div>
+                    
+                    <div class="urgency">
+                        Nur noch wenige Plaetze verfuegbar diese Woche
+                    </div>
+
                     <form id="leadForm">
                         <div class="form-group">
-                            <label for="firstName">First Name <span>*</span></label>
-                            <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                            <label for="firstName">Vorname <span>*</span></label>
+                            <input type="text" id="firstName" name="firstName" placeholder="Ihr Vorname" required>
                         </div>
                         <div class="form-group">
-                            <label for="lastName">Last Name <span>*</span></label>
-                            <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                            <label for="lastName">Nachname <span>*</span></label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Ihr Nachname" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email <span>*</span></label>
-                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            <label for="email">E-Mail <span>*</span></label>
+                            <input type="email" id="email" name="email" placeholder="ihre@email.de" required>
                         </div>
                         <div class="form-group">
-                            <label for="phone">Phone <span>*</span></label>
+                            <label for="phone">Telefon <span>*</span></label>
                             <input type="tel" id="phone" name="phone" placeholder="+49 123 456789" required>
                         </div>
                         <div class="form-group">
-                            <label for="country">Country <span>*</span></label>
+                            <label for="country">Land <span>*</span></label>
                             <select id="country" name="country" required>
-                                <option value="">Select Country</option>
-                                <option value="DE">Germany</option>
-                                <option value="AT">Austria</option>
-                                <option value="CH">Switzerland</option>
-                                <option value="NL">Netherlands</option>
-                                <option value="BE">Belgium</option>
-                                <option value="other">Other</option>
+                                <option value="">Land auswaehlen</option>
+                                <option value="DE">Deutschland</option>
+                                <option value="AT">Oesterreich</option>
+                                <option value="CH">Schweiz</option>
+                                <option value="NL">Niederlande</option>
+                                <option value="BE">Belgien</option>
+                                <option value="other">Anderes</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="experience">Investment Experience</label>
+                            <label for="experience">Bisherige Erfahrung</label>
                             <select id="experience" name="experience">
-                                <option value="">Select Experience</option>
-                                <option value="beginner">Beginner - Just starting</option>
-                                <option value="intermediate">Some experience</option>
-                                <option value="experienced">Experienced investor</option>
-                                <option value="lost-money">Lost money - Need help</option>
+                                <option value="">Bitte waehlen</option>
+                                <option value="beginner">Anfaenger - Noch nicht gestartet</option>
+                                <option value="some">Ein wenig Erfahrung</option>
+                                <option value="experienced">Erfahrener Anleger</option>
+                                <option value="lost">Wiederaufbau nach Verlusten</option>
                             </select>
                         </div>
-                        <button type="submit" class="submit-btn" id="submitBtn">Get Free Expert Advice</button>
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            Meine Moeglichkeiten entdecken
+                        </button>
                     </form>
+
+                    <div class="trust-badges">
+                        <div class="trust-badge">
+                            <span>+</span> 500+ zufriedene Kunden
+                        </div>
+                        <div class="trust-badge">
+                            <span>+</span> Diskret & sicher
+                        </div>
+                        <div class="trust-badge">
+                            <span>+</span> Keine Verpflichtung
+                        </div>
+                    </div>
                 </div>
                 <div id="success-message" class="success-message">
-                    <h3>Thank You!</h3>
-                    <p>Our team will contact you within 24 hours.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="features">
-        <div class="container">
-            <div class="section-header">
-                <h2>Why Thousands Trust Us</h2>
-                <p>Professional guidance for investors at every stage</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>No Experience Needed</h3>
-                    <p>Perfect for beginners. Our experts guide you step by step through building your first portfolio.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Recover From Losses</h3>
-                    <p>Lost money before? We specialize in helping investors recover and build sustainable wealth.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Pension Planning</h3>
-                    <p>Secure your retirement with smart pension strategies. Ages 40-65, it's never too late to start.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>German Market Expertise</h3>
-                    <p>Deep understanding of German-speaking markets, regulations, and investment opportunities.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Personalized Advice</h3>
-                    <p>Every investor is unique. Get tailored recommendations based on your goals and timeline.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Start Any Amount</h3>
-                    <p>Begin with what you have. Our solutions work for any budget.</p>
+                    <h3>Herzlichen Glueckwunsch zum ersten Schritt</h3>
+                    <p>Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
                 </div>
             </div>
         </div>
@@ -340,7 +371,7 @@
 
     <footer>
         <div class="container">
-            <p>2025 Deutsche Borse Group. All rights reserved. Not investment advice.</p>
+            <p>2025 Deutsche Borse Group. Alle Rechte vorbehalten. | Keine Anlageberatung.</p>
         </div>
     </footer>
 
