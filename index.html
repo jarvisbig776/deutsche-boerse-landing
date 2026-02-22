@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finanzielle Freiheit | Intelligentes VermÃ¶gensmanagement</title>
+    <title>Finanzielle Freiheit | Intelligentes Vermoegensmanagement</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #0A0A0F;
+            background: #001233;
             color: #FFFFFF;
             line-height: 1.6;
         }
@@ -22,55 +22,55 @@
         }
 
         header {
-            padding: 24px 0;
+            padding: 32px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 16px;
+            justify-content: center;
         }
 
         .logo img {
-            height: 40px;
+            height: 80px;
             width: auto;
+            max-width: 100%;
         }
 
         .hero {
-            padding: 80px 0 60px;
+            padding: 60px 0 50px;
             text-align: center;
+            background: linear-gradient(180deg, #001233 0%, #001845 100%);
         }
 
         .hero h1 {
-            font-size: 52px;
+            font-size: 48px;
             font-weight: 800;
             line-height: 1.1;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .hero h1 span {
-            background: linear-gradient(135deg, #0066FF 0%, #00D4FF 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #00B4D8;
         }
 
         .hero-subtitle {
-            font-size: 24px;
-            color: #8B8B9E;
+            font-size: 22px;
+            color: #90E0EF;
             max-width: 700px;
-            margin: 0 auto 20px;
+            margin: 0 auto 16px;
         }
 
         .hero-hint {
-            font-size: 16px;
-            color: #00D4FF;
+            font-size: 15px;
+            color: #CAF0F8;
             font-style: italic;
         }
 
         .secrets-section {
-            padding: 60px 0;
-            background: linear-gradient(180deg, #0A0A0F 0%, #12121A 100%);
+            padding: 50px 0;
+            background: linear-gradient(180deg, #001845 0%, #002855 100%);
         }
 
         .secrets-grid {
@@ -82,8 +82,8 @@
         }
 
         .secret-card {
-            background: linear-gradient(135deg, #12121A 0%, #1E1E2E 100%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: linear-gradient(135deg, rgba(0, 180, 216, 0.1) 0%, rgba(0, 119, 182, 0.1) 100%);
+            border: 1px solid rgba(0, 180, 216, 0.3);
             border-radius: 16px;
             padding: 32px;
             text-align: center;
@@ -93,23 +93,24 @@
             font-size: 18px;
             font-weight: 600;
             margin-bottom: 12px;
-            color: #00D4FF;
+            color: #00B4D8;
         }
 
         .secret-card p {
-            color: #8B8B9E;
+            color: #CAF0F8;
             font-size: 15px;
         }
 
         .form-section {
-            padding: 80px 0 100px;
+            padding: 60px 0 80px;
+            background: #002855;
         }
 
         .form-container {
             max-width: 480px;
             margin: 0 auto;
-            background: linear-gradient(135deg, #12121A 0%, #1E1E2E 100%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: linear-gradient(135deg, #001845 0%, #002855 100%);
+            border: 1px solid rgba(0, 180, 216, 0.3);
             border-radius: 24px;
             padding: 48px;
             position: relative;
@@ -123,57 +124,57 @@
             transform: translateX(-50%);
             width: 60%;
             height: 2px;
-            background: linear-gradient(90deg, transparent, #00D4FF, transparent);
+            background: linear-gradient(90deg, transparent, #00B4D8, transparent);
         }
 
         .form-header {
             text-align: center;
-            margin-bottom: 32px;
+            margin-bottom: 28px;
         }
 
         .form-header h2 {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .form-header p {
-            color: #8B8B9E;
-            font-size: 15px;
+            color: #90E0EF;
+            font-size: 14px;
         }
 
         .urgency {
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.3);
+            background: rgba(0, 180, 216, 0.15);
+            border: 1px solid rgba(0, 180, 216, 0.4);
             border-radius: 8px;
             padding: 12px;
             margin-bottom: 24px;
             text-align: center;
-            font-size: 14px;
-            color: #00D4FF;
+            font-size: 13px;
+            color: #00B4D8;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-size: 14px;
             font-weight: 500;
         }
 
         .form-group label span {
-            color: #00D4FF;
+            color: #00B4D8;
         }
 
         .form-group input,
         .form-group select {
             width: 100%;
             padding: 14px 16px;
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 24, 69, 0.5);
+            border: 1px solid rgba(0, 180, 216, 0.2);
             border-radius: 12px;
             color: #FFFFFF;
             font-size: 15px;
@@ -183,25 +184,28 @@
         .form-group input:focus,
         .form-group select:focus {
             outline: none;
-            border-color: #0066FF;
+            border-color: #00B4D8;
+            box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.1);
         }
 
         .submit-btn {
             width: 100%;
-            padding: 18px;
-            background: linear-gradient(135deg, #0066FF 0%, #00D4FF 100%);
+            padding: 16px;
+            background: linear-gradient(135deg, #0077B6 0%, #00B4D8 100%);
             border: none;
             border-radius: 12px;
             color: white;
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 600;
             cursor: pointer;
-            transition: transform 0.3s;
+            transition: all 0.3s;
             font-family: inherit;
+            margin-top: 8px;
         }
 
         .submit-btn:hover {
             transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 180, 216, 0.3);
         }
 
         .trust-badges {
@@ -210,26 +214,27 @@
             gap: 24px;
             margin-top: 24px;
             padding-top: 24px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(0, 180, 216, 0.2);
         }
 
         .trust-badge {
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 13px;
-            color: #8B8B9E;
+            gap: 6px;
+            font-size: 12px;
+            color: #90E0EF;
         }
 
         footer {
-            padding: 40px 0;
+            padding: 30px 0;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(0, 180, 216, 0.2);
+            background: #001233;
         }
 
         footer p {
-            color: #8B8B9E;
-            font-size: 13px;
+            color: #90E0EF;
+            font-size: 12px;
         }
 
         .success-message {
@@ -245,8 +250,10 @@
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 36px; }
+            .hero h1 { font-size: 32px; }
             .form-container { padding: 32px 24px; }
+            .logo img { height: 60px; }
+            .trust-badges { flex-direction: column; gap: 12px; }
         }
     </style>
 </head>
@@ -254,7 +261,7 @@
     <header>
         <div class="container">
             <div class="logo">
-                <img src="https://www.cryptotimes.io/wp-content/uploads/2024/02/Deutsche-Borse-Group-website.jpg" alt="Deutsche Borse" onerror="this.style.display='none'">
+                <img src="https://www.cryptotimes.io/wp-content/uploads/2024/02/Deutsche-Borse-Group-website.jpg" alt="Deutsche Borse Group">
             </div>
         </div>
     </header>
@@ -310,18 +317,22 @@
                             <label for="firstName">Vorname <span>*</span></label>
                             <input type="text" id="firstName" name="firstName" placeholder="Ihr Vorname" required>
                         </div>
+                        
                         <div class="form-group">
                             <label for="lastName">Nachname <span>*</span></label>
                             <input type="text" id="lastName" name="lastName" placeholder="Ihr Nachname" required>
                         </div>
+                        
                         <div class="form-group">
                             <label for="email">E-Mail <span>*</span></label>
                             <input type="email" id="email" name="email" placeholder="ihre@email.de" required>
                         </div>
+                        
                         <div class="form-group">
                             <label for="phone">Telefon <span>*</span></label>
                             <input type="tel" id="phone" name="phone" placeholder="+49 123 456789" required>
                         </div>
+                        
                         <div class="form-group">
                             <label for="country">Land <span>*</span></label>
                             <select id="country" name="country" required>
@@ -334,6 +345,7 @@
                                 <option value="other">Anderes</option>
                             </select>
                         </div>
+                        
                         <div class="form-group">
                             <label for="experience">Bisherige Erfahrung</label>
                             <select id="experience" name="experience">
@@ -344,6 +356,7 @@
                                 <option value="lost">Wiederaufbau nach Verlusten</option>
                             </select>
                         </div>
+                        
                         <button type="submit" class="submit-btn" id="submitBtn">
                             Meine Moeglichkeiten entdecken
                         </button>
@@ -351,16 +364,17 @@
 
                     <div class="trust-badges">
                         <div class="trust-badge">
-                            <span>+</span> 500+ zufriedene Kunden
+                            <span>âœ“</span> 500+ zufriedene Kunden
                         </div>
                         <div class="trust-badge">
-                            <span>+</span> Diskret & sicher
+                            <span>âœ“</span> Diskret & sicher
                         </div>
                         <div class="trust-badge">
-                            <span>+</span> Keine Verpflichtung
+                            <span>âœ“</span> Keine Verpflichtung
                         </div>
                     </div>
                 </div>
+                
                 <div id="success-message" class="success-message">
                     <h3>Herzlichen Glueckwunsch zum ersten Schritt</h3>
                     <p>Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
@@ -371,7 +385,7 @@
 
     <footer>
         <div class="container">
-            <p>2025 Deutsche Borse Group. Alle Rechte vorbehalten. | Keine Anlageberatung.</p>
+            <p> 2025 Deutsche Borse Group. Alle Rechte vorbehalten. | Keine Anlageberatung.</p>
         </div>
     </footer>
 
