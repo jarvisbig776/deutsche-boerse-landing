@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deutsche BÃ¶rse Group - Financial Solutions</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .hero {
+            text-align: center;
+            color: white;
+            padding: 60px 0;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 500px;
+            margin: -40px auto 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .form-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        .feature {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 12px;
+            color: white;
+        }
+        .feature h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        .feature p {
+            opacity: 0.9;
+        }
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+        .success-message h3 {
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .form-section { padding: 30px 20px; margin: -20px 20px 40px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>Deutsche BÃ¶rse Group</h1>
+            <p>Unlock institutional-grade financial solutions. Connect with our team to explore trading, clearing, and market data services tailored to your needs.</p>
+        </div>
+        
+        <div class="form-section">
+            <div id="form-container">
+                <h2>Request Information</h2>
+                <form id="leadForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Business Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company *</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Job Title *</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="interest">Area of Interest *</label>
+                        <select id="interest" name="interest" required>
+                            <option value="">Select an option</option>
+                            <option value="trading">Trading & Execution</option>
+                            <option value="clearing">Clearing & Settlement</option>
+                            <option value="market-data">Market Data & Analytics</option>
+                            <option value="index">Index Services</option>
+                            <option value="technology">Technology & Connectivity</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone (optional)</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <button type="submit" class="submit-btn">Get in Touch</button>
+                </form>
+            </div>
+            <div id="success-message" class="success-message">
+                <h3>âœ“ Thank You!</h3>
+                <p>Your request has been received. A member of our team will contact you within 24 hours.</p>
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>ðŸŒ Global Markets</h3>
+                <p>Access to major European and international exchanges with seamless connectivity and deep liquidity pools.</p>
+            </div>
+            <div class="feature">
+                <h3>âš¡ Low Latency</h3>
+                <p>State-of-the-art infrastructure designed for high-frequency trading and mission-critical execution.</p>
+            </div>
+            <div class="feature">
+                <h3>ðŸ“Š Market Data</h3>
+                <p>Real-time and historical data feeds powering analytics, risk management, and trading decisions.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                company: document.getElementById('company').value,
+                title: document.getElementById('title').value,
+                interest: document.getElementById('interest').value,
+                phone: document.getElementById('phone').value,
+                timestamp: new Date().toISOString(),
+                source: 'landing-page',
+                campaign: 'deutsche-boerse-leads'
+            };
+            
+            try {
+                // Send to your backend/API
+                const response = await fetch('https://your-api-endpoint.com/leads', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                
+                // Show success message
+                document.getElementById('form-container').style.display = 'none';
+                document.getElementById('success-message').style.display = 'block';
+                
+            } catch (error) {
+                console.error('Error:', error);
+                alert('There was an error submitting your request. Please try again or contact us directly.');
+            }
+        });
+    </script>
+</body>
+</html>
